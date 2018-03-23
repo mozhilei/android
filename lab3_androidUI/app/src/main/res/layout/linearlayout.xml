@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--编写一个线性布局-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="#000000"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+       android:layout_weight="1"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="One,One"
+            android:textSize="20dp"
+            android:padding="5dp"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/shape"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="One,Two"
+            android:textSize="20dp"
+            android:padding="1dp"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/shape"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="One,Three"
+            android:textSize="20dp"
+            android:padding="5dp"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/shape"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="One,Four"
+            android:textSize="20dp"
+            android:padding="5dp"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/shape"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Two,One"
+            android:textSize="20dp"
+            android:padding="5dp"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/shape"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="Two,Two"
+            android:textSize="20dp"
+            android:padding="1dp"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/shape"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Two,Three"
+            android:textSize="20dp"
+            android:padding="5dp"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/shape"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Two,Four"
+            android:textSize="20dp"
+            android:padding="5dp"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/shape"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Three,One"
+            android:textSize="20dp"
+            android:padding="5dp"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/shape"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Three,Two"
+            android:textSize="20dp"
+            android:padding="1dp"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/shape"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Three,Three"
+            android:textSize="20dp"
+            android:padding="5dp"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/shape"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Three,Four"
+            android:textSize="20dp"
+            android:padding="5dp"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/shape"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Four,One"
+            android:textSize="20dp"
+            android:padding="5dp"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/shape"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="Four,Two"
+            android:textSize="20dp"
+            android:padding="1dp"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/shape"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Four,Three"
+            android:textSize="20dp"
+            android:padding="5dp"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/shape"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Four,Four"
+            android:textSize="20dp"
+            android:padding="5dp"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/shape"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
+
+
