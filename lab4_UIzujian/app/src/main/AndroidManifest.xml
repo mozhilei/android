@@ -24,8 +24,8 @@
             android:label="DialogActivity" />
         <activity
             android:name=".MenuTest"
-            android:label="MenuTest"></activity>
-        <activity android:name=".ActionMode_test"></activity>
+            android:label="MenuTest" />
+        <activity android:name=".ActionMode_test" />
     </application>
 
 </manifest>

@@ -9,6 +9,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
@@ -22,6 +23,8 @@ public class ActionMode_test extends AppCompatActivity {
 
     private String[] number=new String[]{"one","two","three","four","five","six"};
     private int picId =R.drawable.cat;
+    private int ifActionMode=0;
+    private int[] status=new int[]{0,0,0,0,0,0};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,23 +38,36 @@ public class ActionMode_test extends AppCompatActivity {
             list.add(showitem);
         }
 
-        SimpleAdapter myadapter=new SimpleAdapter(this,list,R.layout.list_item,
+        final SimpleAdapter myadapter=new SimpleAdapter(this,list,R.layout.list_item,
                 new String[]{"name","picID"},new int[]{R.id.textview2,R.id.image2});
-        ListView listview=findViewById(R.id.listview2);
+        final ListView listview=findViewById(R.id.listview2);
         listview.setAdapter(myadapter);
-
         listview.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
         listview.setMultiChoiceModeListener(new AbsListView.MultiChoiceModeListener() {
+
+            private int n=0;
             @Override
             public void onItemCheckedStateChanged(ActionMode actionMode, int i, long l, boolean b) {
+                long itemid =myadapter.getItemId(i);
+                if(b)
+                {
+                    n++;
+                }
+                else
+                {
+                    n--;
+                }
+                actionMode.setTitle(n + " selected");
 
             }
 
             @Override
             public boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
-                MenuInflater inflater= actionMode.getMenuInflater();
-                inflater.inflate(R.menu.menu1,menu);
+                n = 0;
+                MenuInflater inflater = getMenuInflater();
+                inflater.inflate(R.menu.menu2, menu);
                 return true;
+
             }
 
             @Override
@@ -61,38 +77,33 @@ public class ActionMode_test extends AppCompatActivity {
 
             @Override
             public boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
-                switch (menuItem.getItemId())
-                {
-                    case R.id.item_delete:
-                        actionMode.finish();
-                        return true;
-                }
+                switch (menuItem.getItemId()) {
 
+                    case R.id.item_delete:
+                        n = 0;
+                        actionMode.finish();
+                }
                 return false;
             }
 
             @Override
             public void onDestroyActionMode(ActionMode actionMode) {
+                n=0;
+                ifActionMode=0;
+            }
 
+        });
+
+
+
+        listview.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                ifActionMode=1;
+                return false;
             }
         });
+
     }
 
-
-
-    @Override
-    public boolean onContextItemSelected(MenuItem item) {
-        switch (item.getItemId())
-        {
-            case R.id.item_check:
-                Toast.makeText(this, "click check", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.item_delete:
-                Toast.makeText(this, "click delete", Toast.LENGTH_SHORT).show();
-                break;
-        }
-
-
-        return super.onContextItemSelected(item);
-    }
 }
