@@ -21,10 +21,10 @@ import java.util.Map;
 
 public class ActionMode_test extends AppCompatActivity {
 
-    private String[] number=new String[]{"one","two","three","four","five","six"};
+    private String[] number=new String[]{"one","two","three","four","five","six","seven"};
     private int picId =R.drawable.cat;
     private int ifActionMode=0;
-    private int[] status=new int[]{0,0,0,0,0,0};
+    private int[] status=new int[]{0,0,0,0,0,0,0};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +48,7 @@ public class ActionMode_test extends AppCompatActivity {
             private int n=0;
             @Override
             public void onItemCheckedStateChanged(ActionMode actionMode, int i, long l, boolean b) {
-                long itemid =myadapter.getItemId(i);
+
                 if(b)
                 {
                     n++;
@@ -82,6 +82,7 @@ public class ActionMode_test extends AppCompatActivity {
                     case R.id.item_delete:
                         n = 0;
                         actionMode.finish();
+                        break;
                 }
                 return false;
             }
@@ -93,7 +94,20 @@ public class ActionMode_test extends AppCompatActivity {
             }
 
         });
-
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                if (ifActionMode == 1) {
+                    if (status[i] == 0) {
+                        view.setBackgroundResource(R.color.red);
+                        status[i] = 1;
+                    } else {
+                        view.setBackgroundResource(R.color.white);
+                        status[i] = 0;
+                    }
+                }
+            }
+        });
 
 
         listview.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
