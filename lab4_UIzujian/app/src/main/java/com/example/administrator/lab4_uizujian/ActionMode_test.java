@@ -1,5 +1,8 @@
 package com.example.administrator.lab4_uizujian;
 
+import android.content.Context;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ActionMode;
@@ -8,66 +11,56 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 public class ActionMode_test extends AppCompatActivity {
 
     private String[] number=new String[]{"one","two","three","four","five","six","seven"};
-    private int picId =R.drawable.cat;
-    private int ifActionMode=0;
-    private int[] status=new int[]{0,0,0,0,0,0,0};
+    private Myadapter myadapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_action_mode_test);
-        List<Map<String,Object>> list=new ArrayList<Map<String,Object>>();
-        for(int i=0;i<number.length;i++)
-        {
-            Map<String,Object> showitem=new HashMap<String,Object>();
-            showitem.put("name",number[i]);
-            showitem.put("picID",picId);
-            list.add(showitem);
-        }
-
-        final SimpleAdapter myadapter=new SimpleAdapter(this,list,R.layout.list_item,
-                new String[]{"name","picID"},new int[]{R.id.textview2,R.id.image2});
+        myadapter=new Myadapter(this,R.layout.list_item,R.id.textview2,number);
         final ListView listview=findViewById(R.id.listview2);
         listview.setAdapter(myadapter);
         listview.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
         listview.setMultiChoiceModeListener(new AbsListView.MultiChoiceModeListener() {
-
-            private int n=0;
+            private int nr=0;
             @Override
             public void onItemCheckedStateChanged(ActionMode actionMode, int i, long l, boolean b) {
-
-                if(b)
+                if (b)
                 {
-                    n++;
+                    nr++;
+                    myadapter.setNewSelection(i,b);
                 }
                 else
                 {
-                    n--;
+                    nr--;
+                    myadapter.removeSelection(i);
                 }
-                actionMode.setTitle(n + " selected");
+                actionMode.setTitle(nr+" selected");
 
             }
 
             @Override
             public boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
-                n = 0;
-                MenuInflater inflater = getMenuInflater();
-                inflater.inflate(R.menu.menu2, menu);
+                MenuInflater inflater=getMenuInflater();
+                inflater.inflate(R.menu.menu2,menu);
                 return true;
-
             }
 
             @Override
@@ -78,46 +71,67 @@ public class ActionMode_test extends AppCompatActivity {
             @Override
             public boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
-
                     case R.id.item_delete:
-                        n = 0;
+                        nr = 0;
+                        myadapter.clearSelection();
                         actionMode.finish();
-                        break;
                 }
                 return false;
             }
 
             @Override
             public void onDestroyActionMode(ActionMode actionMode) {
-                n=0;
-                ifActionMode=0;
-            }
+                myadapter.clearSelection();
 
-        });
-        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                if (ifActionMode == 1) {
-                    if (status[i] == 0) {
-                        view.setBackgroundResource(R.color.red);
-                        status[i] = 1;
-                    } else {
-                        view.setBackgroundResource(R.color.white);
-                        status[i] = 0;
-                    }
-                }
             }
         });
-
-
         listview.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                ifActionMode=1;
+               listview.setItemChecked(i,!myadapter.isPositionChecked(i));
                 return false;
             }
         });
 
+    }
+
+    public class Myadapter extends ArrayAdapter<String>
+    {
+        private HashMap<Integer,Boolean> mSelection=new HashMap<Integer,Boolean>();
+        public Myadapter(Context context, int resource,int textViewResourceId, String[] objects)
+        {
+            super(context, resource, textViewResourceId, objects);
+        }
+        public void setNewSelection(int position, boolean value) {
+            mSelection.put(position, value);
+            notifyDataSetChanged();
+        }
+        public boolean isPositionChecked(int position) {
+            Boolean result = mSelection.get(position);
+            return result == null ? false : result;
+        }
+
+        public void removeSelection(int position) {
+            mSelection.remove(position);
+            notifyDataSetChanged();
+        }
+
+        public void clearSelection() {
+            mSelection = new HashMap<Integer, Boolean>();
+            notifyDataSetChanged();
+        }
+
+        @Override
+        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+            View v=super.getView(position,convertView,parent);
+            v.setBackgroundColor(getResources().getColor(R.color.white));
+
+            if(mSelection.get(position)!=null)
+            {
+                v.setBackgroundColor(getResources().getColor(R.color.red));
+            }
+            return super.getView(position, convertView, parent);
+        }
     }
 
 }
