@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--1-->
+    <PreferenceCategory
+        android:title="In-line preferences"
+        android:key="In-line preferences">
+        <CheckBoxPreference
+                android:key="checkbox"
+                android:title="CheckBoxPreference"
+                android:summary="this is CheckBoxPreference"
+                android:defaultValue="false" />
+    </PreferenceCategory>
+<!--2-->
+    <PreferenceCategory
+        android:title="Dialog-based preferences"
+        android:key="Dialogbased preferences">
+        <EditTextPreference
+            android:key="EditTextPreference"
+            android:title="EditTextPreference"
+            android:summary="this is EditTextPreference"
+            android:dialogTitle="Enter your name"/>
+
+        <ListPreference
+            android:key="pref_syncConnectionType"
+            android:title="ListPreference"
+            android:summary="this is ListPreference"
+            android:dialogTitle="choose one"
+            android:entries="@array/entries_str"
+            android:entryValues="@array/entries_values_str"
+            android:defaultValue="@string/default_str"
+            />
+
+    </PreferenceCategory>
+<!--3-->
+    <PreferenceCategory
+        android:title="Launch preferences"
+        android:key="Launch preferences">
+        <PreferenceScreen
+            android:key="perferenceScreen"
+            android:title="ScreenPerference"
+            android:summary="show another screen of perfences">
+            <CheckBoxPreference
+                android:key="CBP1"
+                android:title="Toggle Perference"
+                android:summary="this is other Screen"
+                android:defaultValue="true"/>
+            <CheckBoxPreference
+                android:key="CBP11"
+                android:title="Toggle Perference"
+                android:summary="this is other Screen"
+                android:defaultValue="false"/>
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:key="perferenceScreen1"
+            android:title="Intent Perference"
+            android:summary="launch an activity fron an intent">
+            <intent android:action="android.intent.action.VIEW"
+                android:data="http://www.baidu.com" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+<!--4-->
+    <PreferenceCategory
+        android:title="Preference attributes"
+        android:key="Preference attributes">
+        <CheckBoxPreference
+            android:key="CBP2"
+            android:title="Parent Checkbox Perference"
+            android:summary="this is visually a parent"/>
+        <CheckBoxPreference
+            android:key="CBP3"
+            android:title="Child Checkbox Perference"
+            android:summary="this is visually a child"
+            android:dependency="CBP2"/>
+
+
+    </PreferenceCategory>
+</PreferenceScreen>

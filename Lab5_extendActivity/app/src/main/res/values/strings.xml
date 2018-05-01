@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Lab5_extendActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="entries_str">
+        <item>option A</item>
+        <item>option B</item>
+        <item>option C</item>
+    </string-array>
+    <string-array name="entries_values_str">
+        <item>a</item>
+        <item>b</item>
+        <item>c</item>
+    </string-array>
+    <string name="default_str">a</string>
+</resources>
