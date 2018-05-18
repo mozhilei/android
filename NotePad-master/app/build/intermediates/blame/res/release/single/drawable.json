@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "E:\\androidWorkspace\\NotePad-master\\app\\build\\intermediates\\res\\merged\\release\\drawable\\ic_menu_edit.png",
+        "source": "E:\\androidWorkspace\\NotePad-master\\app\\src\\main\\res\\drawable\\ic_menu_edit.png"
+    },
+    {
+        "merged": "E:\\androidWorkspace\\NotePad-master\\app\\build\\intermediates\\res\\merged\\release\\drawable\\live_folder_notes.png",
+        "source": "E:\\androidWorkspace\\NotePad-master\\app\\src\\main\\res\\drawable\\live_folder_notes.png"
+    },
+    {
+        "merged": "E:\\androidWorkspace\\NotePad-master\\app\\build\\intermediates\\res\\merged\\release\\drawable\\ic_menu_revert.png",
+        "source": "E:\\androidWorkspace\\NotePad-master\\app\\src\\main\\res\\drawable\\ic_menu_revert.png"
+    },
+    {
+        "merged": "E:\\androidWorkspace\\NotePad-master\\app\\build\\intermediates\\res\\merged\\release\\drawable\\ic_menu_compose.png",
+        "source": "E:\\androidWorkspace\\NotePad-master\\app\\src\\main\\res\\drawable\\ic_menu_compose.png"
+    },
+    {
+        "merged": "E:\\androidWorkspace\\NotePad-master\\app\\build\\intermediates\\res\\merged\\release\\drawable\\ic_menu_save.png",
+        "source": "E:\\androidWorkspace\\NotePad-master\\app\\src\\main\\res\\drawable\\ic_menu_save.png"
+    },
+    {
+        "merged": "E:\\androidWorkspace\\NotePad-master\\app\\build\\intermediates\\res\\merged\\release\\drawable\\app_notes.png",
+        "source": "E:\\androidWorkspace\\NotePad-master\\app\\src\\main\\res\\drawable\\app_notes.png"
+    },
+    {
+        "merged": "E:\\androidWorkspace\\NotePad-master\\app\\build\\intermediates\\res\\merged\\release\\drawable\\ic_menu_delete.png",
+        "source": "E:\\androidWorkspace\\NotePad-master\\app\\src\\main\\res\\drawable\\ic_menu_delete.png"
+    }
+]
