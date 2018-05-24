@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+/**
+ * 协定类，用于规定内容提供器的内容的格式
+ */
 package com.example.android.notepad;
 
 import android.net.Uri;

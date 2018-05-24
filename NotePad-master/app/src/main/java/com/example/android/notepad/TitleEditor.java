@@ -15,6 +15,9 @@
  */
 
 package com.example.android.notepad;
+/**
+ * 修改笔记的title
+ */
 
 import android.app.Activity;
 import android.content.ContentValues;

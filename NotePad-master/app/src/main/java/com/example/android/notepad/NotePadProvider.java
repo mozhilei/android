@@ -15,6 +15,9 @@
  */
 
 package com.example.android.notepad;
+/**
+ * notepad的内容提供器，用于分享内容，要是不用分享内容可以不用修改
+ */
 
 import com.example.android.notepad.NotePad;
 

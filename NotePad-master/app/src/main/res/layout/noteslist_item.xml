@@ -31,7 +31,7 @@
         />
 
     <TextView
-        android:id="@+id/timestamp"
+        android:id="@+id/timestamp1"
         android:layout_width="match_parent"
         android:layout_height="20dp"
         android:text="这里放最近修改时间"

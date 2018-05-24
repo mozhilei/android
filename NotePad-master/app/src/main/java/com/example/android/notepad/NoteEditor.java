@@ -15,6 +15,9 @@
  */
 
 package com.example.android.notepad;
+/**
+ * 编写笔记页面
+ */
 
 import android.app.Activity;
 import android.content.ClipData;

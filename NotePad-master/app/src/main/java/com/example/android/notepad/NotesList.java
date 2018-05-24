@@ -15,7 +15,9 @@
  */
 
 package com.example.android.notepad;
-
+/*
+* 主页面，有一个列表，显示每一个笔记记录的title
+* */
 import com.example.android.notepad.NotePad;
 
 import android.app.ListActivity;
