@@ -20,7 +20,7 @@
     android:orientation="vertical"
     >
     <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@android:id/text1"
+        android:id="@+id/text1"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -36,6 +36,11 @@
         android:layout_height="20dp"
         android:text="这里放最近修改时间"
         android:background="#FFFFFF"/>
+    <TextView
+        android:id="@+id/timestamp2"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="#FFFF00"/>
 
 </LinearLayout>
 

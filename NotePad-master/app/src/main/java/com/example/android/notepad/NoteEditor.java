@@ -63,7 +63,8 @@ public class NoteEditor extends Activity {
         new String[] {
             NotePad.Notes._ID,
             NotePad.Notes.COLUMN_NAME_TITLE,
-            NotePad.Notes.COLUMN_NAME_NOTE
+            NotePad.Notes.COLUMN_NAME_NOTE,
+
     };
 
     // A label for the saved state of the activity
@@ -528,6 +529,8 @@ public class NoteEditor extends Activity {
 
         // Sets up a map to contain values to be updated in the provider.
         ContentValues values = new ContentValues();
+
+
         values.put(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE, System.currentTimeMillis());
 
         // If the action is to insert a new note, this creates an initial title for it.

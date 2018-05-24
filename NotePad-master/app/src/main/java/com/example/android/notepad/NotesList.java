@@ -28,6 +28,7 @@ import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -40,6 +41,11 @@ import android.view.ContextMenu.ContextMenuInfo;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 /**
  * Displays a list of notes. Will display notes from the {@link Uri}
@@ -62,6 +68,7 @@ public class NotesList extends ListActivity {
     private static final String[] PROJECTION = new String[] {
             NotePad.Notes._ID, // 0
             NotePad.Notes.COLUMN_NAME_TITLE, // 1
+            NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE,
     };
 
     /** The index of the title column */
@@ -117,13 +124,17 @@ public class NotesList extends ListActivity {
          * The SimpleCursorAdapter maps them in ascending order to determine where each column
          * value will appear in the ListView.
          */
+        //复制游标，将其中的内容进行修改
+
 
         // The names of the cursor columns to display in the view, initialized to the title column
-        String[] dataColumns = { NotePad.Notes.COLUMN_NAME_TITLE } ;
+        String[] dataColumns = { NotePad.Notes.COLUMN_NAME_TITLE, NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE} ;
 
         // The view IDs that will display the cursor columns, initialized to the TextView in
         // noteslist_item.xml
-        int[] viewIDs = { android.R.id.text1 };
+        int[] viewIDs = { R.id.text1,R.id.timestamp1};
+
+
 
         // Creates the backing adapter for the ListView.
         SimpleCursorAdapter adapter
@@ -132,11 +143,45 @@ public class NotesList extends ListActivity {
                       R.layout.noteslist_item,          // Points to the XML for a list item
                       cursor,                           // The cursor to get items from
                       dataColumns,
-                      viewIDs
+                      viewIDs,
+                SimpleCursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER
               );
 
+        //将读出的数据转化为年月日类型
+        SimpleCursorAdapter.ViewBinder viewBinder=new SimpleCursorAdapter.ViewBinder() {
+            @Override
+            public boolean setViewValue(View view, Cursor cursor, int i) {
+
+                if(cursor.getColumnIndex(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE)==i)
+                {
+                    final TextView textView1=(TextView) findViewById(R.id.timestamp1);
+                    SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss",Locale.CHINA);
+                    Date date=new Date(cursor.getInt(i));
+                    String time=format.format(date);
+                    Log.d("TIME", "onCreate1:"+time);
+//                    textView1.setText("1111");
+
+                    textView1.setBackgroundColor(Color.parseColor("#000000"));
+                    return true;
+                }
+                return false;
+            }
+        };
+        //应用viewBinder
+        adapter.setViewBinder(viewBinder);
+
+        //将游标textview的数据读取出来，转化成年月日的格式
+//        TextView textView1=(TextView) findViewById(R.id.timestamp1);
+//        SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd HH:mm", Locale.CHINA);
+//        Date date=new Date(123456789);
+//        String time=format.format(date);
+//        Log.d("TIME", "onCreate:"+time);
+//        textView1.setText(time);
+
         // Sets the ListView's adapter to be the cursor adapter that was just created.
+
         setListAdapter(adapter);
+
     }
 
     /**
@@ -466,4 +511,5 @@ public class NotesList extends ListActivity {
             startActivity(new Intent(Intent.ACTION_EDIT, uri));
         }
     }
+
 }
