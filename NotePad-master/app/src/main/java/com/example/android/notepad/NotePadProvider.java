@@ -48,7 +48,10 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 
 /**
  * Provides access to a database of notes. Each note has a title, the note
@@ -198,8 +201,8 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
                    + NotePad.Notes._ID + " INTEGER PRIMARY KEY,"
                    + NotePad.Notes.COLUMN_NAME_TITLE + " TEXT,"
                    + NotePad.Notes.COLUMN_NAME_NOTE + " TEXT,"
-                   + NotePad.Notes.COLUMN_NAME_CREATE_DATE + " INTEGER,"
-                   + NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE + "INTEGER"
+                   + NotePad.Notes.COLUMN_NAME_CREATE_DATE + " interger,"
+                   + NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE + "interger"
                    + ");");
        }
 

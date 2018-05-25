@@ -134,8 +134,6 @@ public class NotesList extends ListActivity {
         // noteslist_item.xml
         int[] viewIDs = { R.id.text1,R.id.timestamp1};
 
-
-
         // Creates the backing adapter for the ListView.
         SimpleCursorAdapter adapter
             = new SimpleCursorAdapter(
@@ -160,6 +158,13 @@ public class NotesList extends ListActivity {
                     String time=format.format(date);
                     Log.d("TIME", "onCreate1:"+time);
                     textView1.setText(time);
+
+
+                    //测试为什么系统时间不正确
+                    Date date1=new Date(System.currentTimeMillis());
+                    String timetest=format.format(date1);
+                    Log.d("TIME", "timetest"+timetest);
+
                     return true;
                 }
                 return false;
@@ -168,13 +173,6 @@ public class NotesList extends ListActivity {
         //应用viewBinder
         adapter.setViewBinder(viewBinder);
 
-        //将游标textview的数据读取出来，转化成年月日的格式
-//        TextView textView1=(TextView) findViewById(R.id.timestamp1);
-//        SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd HH:mm", Locale.CHINA);
-//        Date date=new Date(123456789);
-//        String time=format.format(date);
-//        Log.d("TIME", "onCreate:"+time);
-//        textView1.setText(time);
 
         // Sets the ListView's adapter to be the cursor adapter that was just created.
 
