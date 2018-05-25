@@ -154,17 +154,11 @@ public class NotesList extends ListActivity {
                 {
                     TextView textView1=(TextView)view;
                     SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss",Locale.CHINA);
-                    Date date=new Date(cursor.getInt(i));
+                    Long nowtime=cursor.getLong(i);
+                    Date date=new Date(nowtime);
                     String time=format.format(date);
-                    Log.d("TIME", "onCreate1:"+time);
+                    Log.d("TIME", "onCreate1:"+time+"  cursor.getinti= "+nowtime);
                     textView1.setText(time);
-
-
-                    //测试为什么系统时间不正确
-                    Date date1=new Date(System.currentTimeMillis());
-                    String timetest=format.format(date1);
-                    Log.d("TIME", "timetest"+timetest);
-
                     return true;
                 }
                 return false;

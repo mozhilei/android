@@ -201,8 +201,8 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
                    + NotePad.Notes._ID + " INTEGER PRIMARY KEY,"
                    + NotePad.Notes.COLUMN_NAME_TITLE + " TEXT,"
                    + NotePad.Notes.COLUMN_NAME_NOTE + " TEXT,"
-                   + NotePad.Notes.COLUMN_NAME_CREATE_DATE + " interger,"
-                   + NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE + "interger"
+                   + NotePad.Notes.COLUMN_NAME_CREATE_DATE + " INTEGER,"
+                   + NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE + " INTEGER,"
                    + ");");
        }
 
@@ -523,6 +523,8 @@ public class NotePadProvider extends ContentProvider implements PipeDataWriter<C
 
         // Gets the current system time in milliseconds
         Long now = Long.valueOf(System.currentTimeMillis());
+        Log.d("TIME", "long now="+now);
+
 
         // If the values map doesn't contain the creation date, sets the value to the current time.
         if (values.containsKey(NotePad.Notes.COLUMN_NAME_CREATE_DATE) == false) {
