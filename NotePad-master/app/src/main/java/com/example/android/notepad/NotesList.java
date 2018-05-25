@@ -154,14 +154,12 @@ public class NotesList extends ListActivity {
 
                 if(cursor.getColumnIndex(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE)==i)
                 {
-                    final TextView textView1=(TextView) findViewById(R.id.timestamp1);
+                    TextView textView1=(TextView)view;
                     SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss",Locale.CHINA);
                     Date date=new Date(cursor.getInt(i));
                     String time=format.format(date);
                     Log.d("TIME", "onCreate1:"+time);
-//                    textView1.setText("1111");
-
-                    textView1.setBackgroundColor(Color.parseColor("#000000"));
+                    textView1.setText(time);
                     return true;
                 }
                 return false;
