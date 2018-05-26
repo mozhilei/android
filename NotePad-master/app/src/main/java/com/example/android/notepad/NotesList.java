@@ -36,6 +36,7 @@ import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.SubMenu;
 import android.view.View;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.widget.AdapterView;
@@ -167,10 +168,9 @@ public class NotesList extends ListActivity {
         //应用viewBinder
         adapter.setViewBinder(viewBinder);
 
-
         // Sets the ListView's adapter to be the cursor adapter that was just created.
-
         setListAdapter(adapter);
+
 
     }
 
@@ -300,6 +300,7 @@ public class NotesList extends ListActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+
         case R.id.menu_add:
           /*
            * Launches a new Activity using an Intent. The intent filter for the Activity
@@ -460,6 +461,7 @@ public class NotesList extends ListActivity {
                           // passed in.
                 null      // No where clause is used, so no where arguments are needed.
             );
+
   
             // Returns to the caller and skips further processing.
             return true;
