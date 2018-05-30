@@ -23,16 +23,17 @@ public final class R {
     public static final int context_delete=0x7f020002;
     public static final int context_open=0x7f020003;
     public static final int editTextSearch=0x7f020004;
-    public static final int menu_add=0x7f020005;
-    public static final int menu_delete=0x7f020006;
-    public static final int menu_paste=0x7f020007;
-    public static final int menu_revert=0x7f020008;
-    public static final int menu_save=0x7f020009;
-    public static final int note=0x7f02000a;
-    public static final int ok=0x7f02000b;
-    public static final int text1=0x7f02000c;
-    public static final int timestamp1=0x7f02000d;
-    public static final int title=0x7f02000e;
+    public static final int listView=0x7f020005;
+    public static final int menu_add=0x7f020006;
+    public static final int menu_delete=0x7f020007;
+    public static final int menu_paste=0x7f020008;
+    public static final int menu_revert=0x7f020009;
+    public static final int menu_save=0x7f02000a;
+    public static final int note=0x7f02000b;
+    public static final int ok=0x7f02000c;
+    public static final int text1=0x7f02000d;
+    public static final int timestamp1=0x7f02000e;
+    public static final int title=0x7f02000f;
   }
   public static final class layout {
     public static final int mainlayout=0x7f030000;
