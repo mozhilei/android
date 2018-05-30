@@ -84,11 +84,11 @@
         "source": "E:\\androidWorkspace\\NotePad-master\\app\\src\\main\\res\\drawable-hdpi\\live_folder_notes.png"
     },
     {
-        "merged": "E:\\androidWorkspace\\NotePad-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_menu_revert.png.flat",
-        "source": "E:\\androidWorkspace\\NotePad-master\\app\\src\\main\\res\\drawable-hdpi\\ic_menu_revert.png"
-    },
-    {
         "merged": "E:\\androidWorkspace\\NotePad-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_mainlayout.xml.flat",
         "source": "E:\\androidWorkspace\\NotePad-master\\app\\src\\main\\res\\layout\\mainlayout.xml"
+    },
+    {
+        "merged": "E:\\androidWorkspace\\NotePad-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_menu_revert.png.flat",
+        "source": "E:\\androidWorkspace\\NotePad-master\\app\\src\\main\\res\\drawable-hdpi\\ic_menu_revert.png"
     }
 ]

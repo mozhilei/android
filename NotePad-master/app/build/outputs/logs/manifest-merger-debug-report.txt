@@ -1,8 +1,8 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\androidWorkspace\NotePad-master\app\src\main\AndroidManifest.xml:22:1-120:12
-INJECTED from E:\androidWorkspace\NotePad-master\app\src\main\AndroidManifest.xml:22:1-120:12
-INJECTED from E:\androidWorkspace\NotePad-master\app\src\main\AndroidManifest.xml:22:1-120:12
+ADDED from E:\androidWorkspace\NotePad-master\app\src\main\AndroidManifest.xml:22:1-121:12
+INJECTED from E:\androidWorkspace\NotePad-master\app\src\main\AndroidManifest.xml:22:1-121:12
+INJECTED from E:\androidWorkspace\NotePad-master\app\src\main\AndroidManifest.xml:22:1-121:12
 	package
 		ADDED from E:\androidWorkspace\NotePad-master\app\src\main\AndroidManifest.xml:23:5-42
 		INJECTED from E:\androidWorkspace\NotePad-master\app\src\main\AndroidManifest.xml
