@@ -28,8 +28,6 @@
         android:paddingLeft="5dip"
         android:singleLine="true"
         android:textSize="30dp"
-
-
         />
 
     <TextView
@@ -39,9 +37,7 @@
         android:textAlignment="center"
         android:textSize="18dp"
         android:gravity="center_vertical"
-        android:text="这里放最近修改时间"
         />
-
 </LinearLayout>
 
 

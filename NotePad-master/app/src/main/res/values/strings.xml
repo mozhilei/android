@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2007 The Android Open Source Project
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2007 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -35,7 +34,9 @@
     <string name="text_title">Title:</string>
 
     <string name="button_search">Search</string>
+    <string name="menu_search">Search</string>
 
+    <string name="title_notes_search">Search</string>
 
     <string name="resolve_edit">Edit note</string>
     <string name="resolve_title">Edit title</string>

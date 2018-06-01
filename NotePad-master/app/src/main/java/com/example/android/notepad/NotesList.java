@@ -69,6 +69,7 @@ public class NotesList extends ListActivity {
     private static final String[] PROJECTION = new String[] {
             NotePad.Notes._ID, // 0
             NotePad.Notes.COLUMN_NAME_TITLE, // 1
+            //添加修改日期字段
             NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE,
     };
 
@@ -317,6 +318,12 @@ public class NotesList extends ListActivity {
            */
           startActivity(new Intent(Intent.ACTION_PASTE, getIntent().getData()));
           return true;
+          //添加搜索按钮
+            case R.id.menu_search:
+                Intent intent = new Intent();
+                intent.setClass(NotesList.this,SearchActivity.class);
+                NotesList.this.startActivity(intent);
+                return true;
         default:
             return super.onOptionsItemSelected(item);
         }

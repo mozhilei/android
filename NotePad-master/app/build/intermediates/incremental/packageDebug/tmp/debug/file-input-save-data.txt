@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed May 30 23:23:31 CST 2018
+#Sat Jun 02 00:09:55 CST 2018
 0.baseType=DIRECTORY
 0.base=E\:\\androidWorkspace\\NotePad-master\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 0.path=classes.dex
