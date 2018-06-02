@@ -84,10 +84,12 @@ Android期中实验完成度说明
 ![截图1](https://github.com/mozhilei/android/blob/master/NotePad-master/screenshot/1.gif)
 
 <h3 id='2'>2.搜索功能 </h3>
+
 搜索功能的实现相对简单，在一个布局中，上部有一个搜索框，下部，是同 **NoteList.java** 中的显示页面。  
-> 新建一个Activity，以及对应的布局（SearchActivity,activity_search.xml）
-> 使用和 **NoteList.java** 中相同的 **SimpleCursorAdapter** 实现  
-在onCreate中加载布局，为搜索框设置监听器，重载 **onQueryTextSubmit()** 和 **onQueryTextChange()** 
+
+>  新建一个Activity，以及对应的布局（SearchActivity,activity_search.xml）
+>  使用和 **NoteList.java** 中相同的 **SimpleCursorAdapter** 实现  
+在onCreate中加载布局，为搜索框设置监听器，重载 **onQueryTextSubmit()** 和  **onQueryTextChange()** 
 
 ```
 	@Override
@@ -108,7 +110,7 @@ Android期中实验完成度说明
     }
 ```
 
-**onQueryTextChange()**的实现和**NoteList.java**中关于**SimpleCursorAdapter**实现方法相同。
+**onQueryTextChange()** 的实现和 **NoteList.java** 中关于 **SimpleCursorAdapter** 实现方法相同。
 
 ```   
    @Override
