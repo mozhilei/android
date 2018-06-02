@@ -10,7 +10,8 @@ Android期中实验完成度说明
 
 > 在布局文件中修改布局，使得文件具备有时间戳的显示位置   
 > 在查询数据库时，返回定义好的修改时间**NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE**字段   
-> 将存储使用的long类型的系统时间，转化为“年-月-日”格式    
+> 将存储使用的long类型的系统时间，转化为“年-月-日”格式  
+  
 首先修改布局文件noteslist_item.xml，使用一个线性布局，将时间戳显示的TextView添加进去。  
 
 ```
@@ -41,7 +42,7 @@ Android期中实验完成度说明
 	</LinearLayout>  
 ```	
 
-接着，在修改NoteList.java中的PROJECTION，将日期字段读出来   
+接着，在修改 **NoteList.java** 中的PROJECTION，将日期字段读出来   
 
 ```
 		private static final String[] PROJECTION = new String[] {
@@ -52,7 +53,7 @@ Android期中实验完成度说明
 		};   
 ```
 
-使用 **SimpleDateFormat** 就可以将以毫秒为单位的系统时间，转化为想要的格式。转化之后就要想办法应用到 **SimpleCursorAdapter**中，有两种方式，一种是重写 **myadapt** ，继承 **SimpleCursorAdapter**  ，一种是直接使用 **SimpleCursorAdapter.ViewBinder** ，由于添加时间戳功能较为简单，所以采用第二种方式。   
+使用 **SimpleDateFormat** 就可以将以毫秒为单位的系统时间，转化为想要的格式。转化之后就要想办法应用到 **SimpleCursorAdapter** 中，有两种方式，一种是重写 **myadapt** ，继承 **SimpleCursorAdapter**  ，一种是直接使用 **SimpleCursorAdapter.ViewBinder** ，由于添加时间戳功能较为简单，所以采用第二种方式。   
  
 ```
 	//将读出的数据转化为年月日类型
@@ -83,10 +84,10 @@ Android期中实验完成度说明
 ![截图1](https://github.com/mozhilei/android/blob/master/NotePad-master/screenshot/1.gif)
 
 <h3 id='2'>2.搜索功能 </h3>
-搜索功能的实现相对简单，在一个布局中，上部有一个搜索框，下部，是同**NoteList.java**中的显示页面。  
+搜索功能的实现相对简单，在一个布局中，上部有一个搜索框，下部，是同 **NoteList.java** 中的显示页面。  
 > 新建一个Activity，以及对应的布局（SearchActivity,activity_search.xml）
-> 使用和**NoteList.java**中相同的**SimpleCursorAdapter**实现  
-在onCreate中加载布局，为搜索框设置监听器，重载**onQueryTextSubmit()**和**onQueryTextChange()**
+> 使用和 **NoteList.java** 中相同的 **SimpleCursorAdapter** 实现  
+在onCreate中加载布局，为搜索框设置监听器，重载 **onQueryTextSubmit()** 和 **onQueryTextChange()** 
 
 ```
 	@Override
