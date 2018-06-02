@@ -70,7 +70,7 @@ Android期中实验完成度说明
         adapter.setViewBinder(viewBinder);
 
 应用后的效果如图：
-![]()
+![截图1](https://github.com/mozhilei/android/blob/master/NotePad-master/screenshot/1.gif)
 
 <h3 id='2'>2.搜索功能 </h3>
 搜索功能的实现相对简单，在一个布局中，上部有一个搜索框，下部，是同**NoteList.java**中的显示页面。  
@@ -144,7 +144,7 @@ Android期中实验完成度说明
     }
 	
 实现效果如图：  
-![]()  
+![截图2](https://github.com/mozhilei/android/blob/master/NotePad-master/screenshot/2.gif)  
 
 <h3 id='3'>3.界面美化 </h3>
 
