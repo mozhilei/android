@@ -80,7 +80,7 @@ Android期中实验完成度说明
 + #### 新建一个Activity，以及对应的布局（SearchActivity,activity_search.xml）
 + #### 使用和**NoteList.java**中相同的**SimpleCursorAdapter**实现  
 在onCreate中加载布局，为搜索框设置监听器，重载**onQueryTextSubmit()**和**onQueryTextChange()**
-	```
+```
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
