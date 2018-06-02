@@ -1,49 +1,49 @@
 Android期中实验完成度说明
 ====
-*[添加时间戳] (#1) 
-*[添加搜索功能](#2) 
-*[界面美化](#3)  
+> *[添加时间戳](#1)  
+> *[添加搜索功能](#2)   
+> *[界面美化](#3)    
 使用谷歌原版notepad进行修改，最低SKD版本，修改为21，以避免使用过时函数
 ##功能点实现说明  
 <h3 id='1'> 1.时间戳</h3>
 实现时间戳功能，需要：
-+ #### 在布局文件中修改布局，使得文件具备有时间戳的显示位置 
-+ #### 在查询数据库时，返回定义好的修改时间**NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE**字段 
-+ #### 将存储使用的long类型的系统时间，转化为“年-月-日”格式  
++ #### 在布局文件中修改布局，使得文件具备有时间戳的显示位置   
++ #### 在查询数据库时，返回定义好的修改时间**NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE**字段   
++ #### 将存储使用的long类型的系统时间，转化为“年-月-日”格式    
 首先修改布局文件noteslist_item.xml，使用一个线性布局，将时间戳显示的TextView添加进去。  
-	<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:orientation="vertical"
-		>
-		<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-			android:id="@+id/text1"
+		<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
 			android:layout_width="match_parent"
-			android:layout_height="40dp"
-			android:textAppearance="?android:attr/textAppearanceLarge"
-			android:gravity="center_vertical"
-			android:paddingLeft="5dip"
-			android:singleLine="true"
-			android:textSize="30dp"
-			/>
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			>
+			<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+				android:id="@+id/text1"
+				android:layout_width="match_parent"
+				android:layout_height="40dp"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:gravity="center_vertical"
+				android:paddingLeft="5dip"
+				android:singleLine="true"
+				android:textSize="30dp"
+				/>
 
-		<TextView
-			android:id="@+id/timestamp1"
-			android:layout_width="match_parent"
-			android:layout_height="25dp"
-			android:textAlignment="center"
-			android:textSize="18dp"
-			android:gravity="center_vertical"
-			/>
-	</LinearLayout>  
+			<TextView
+				android:id="@+id/timestamp1"
+				android:layout_width="match_parent"
+				android:layout_height="25dp"
+				android:textAlignment="center"
+				android:textSize="18dp"
+				android:gravity="center_vertical"
+				/>
+		</LinearLayout>  
 	
 接着，在修改NoteList.java中的PROJECTION，将日期字段读出来  
-    private static final String[] PROJECTION = new String[] {
-            NotePad.Notes._ID, // 0
-            NotePad.Notes.COLUMN_NAME_TITLE, // 1
-            //添加修改日期字段
-            NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE,
-    };   
+		private static final String[] PROJECTION = new String[] {
+				NotePad.Notes._ID, // 0
+				NotePad.Notes.COLUMN_NAME_TITLE, // 1
+				//添加修改日期字段
+				NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE,
+		};   
 	
 使用**SimpleDateFormat**就可以将以毫秒为单位的系统时间，转化为想要的格式。转化之后就要想办法应用到**SimpleCursorAdapter**中，有两种方式，一种是重写**myadapt**，继承**SimpleCursorAdapter**，一种是直接使用**SimpleCursorAdapter.ViewBinder**，由于添加时间戳功能较为简单，所以采用第二种方式。  
 		//将读出的数据转化为年月日类型
@@ -69,7 +69,7 @@ Android期中实验完成度说明
         //应用viewBinder
         adapter.setViewBinder(viewBinder);
 
-应用后的效果如图：
+应用后的效果如图：   
 ![截图1](https://github.com/mozhilei/android/blob/master/NotePad-master/screenshot/1.gif)
 
 <h3 id='2'>2.搜索功能 </h3>
