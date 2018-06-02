@@ -43,7 +43,7 @@ public class SearchActivity extends ListActivity implements SearchView.OnQueryTe
             intent.setData(NotePad.Notes.CONTENT_URI);
         }
         SearchView searchview = (SearchView)findViewById(R.id.search_view);
-        //为查询文本框注册监听器
+        //为搜索框设置监听器
         searchview.setOnQueryTextListener(SearchActivity.this);
     }
     @Override
