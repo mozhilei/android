@@ -54,28 +54,28 @@ Android期中实验完成度说明
 使用**SimpleDateFormat**就可以将以毫秒为单位的系统时间，转化为想要的格式。转化之后就要想办法应用到**SimpleCursorAdapter**中，有两种方式，一种是重写**myadapt**，继承**SimpleCursorAdapter**，一种是直接使用**SimpleCursorAdapter.ViewBinder**，由于添加时间戳功能较为简单，所以采用第二种方式。   
  
 ```
-		//将读出的数据转化为年月日类型
-        SimpleCursorAdapter.ViewBinder viewBinder=new SimpleCursorAdapter.ViewBinder() {
-            @Override
-            public boolean setViewValue(View view, Cursor cursor, int i) {
-				//修改条目的背景颜色
-                view.setBackgroundColor(Color.rgb(255,218,185));
-                if(cursor.getColumnIndex(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE)==i)
-                {
-                    TextView textView1=(TextView)view;
-                    SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss",Locale.CHINA);
-                    Long nowtime=cursor.getLong(i);
-                    Date date=new Date(nowtime);
-                    String time=format.format(date);
-                    Log.d("TIME", "onCreate1:"+time+"  cursor.getinti= "+nowtime);
-                    textView1.setText(time);
-                    return true;
-                }
-                return false;
+	//将读出的数据转化为年月日类型
+    SimpleCursorAdapter.ViewBinder viewBinder=new SimpleCursorAdapter.ViewBinder() {
+        @Override
+        public boolean setViewValue(View view, Cursor cursor, int i) {
+			//修改条目的背景颜色
+            view.setBackgroundColor(Color.rgb(255,218,185));
+            if(cursor.getColumnIndex(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE)==i)
+            {
+                TextView textView1=(TextView)view;
+                SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss",Locale.CHINA);
+                Long nowtime=cursor.getLong(i);
+                Date date=new Date(nowtime);
+                String time=format.format(date);
+                Log.d("TIME", "onCreate1:"+time+"  cursor.getinti= "+nowtime);
+                textView1.setText(time);
+                return true;
             }
-        };
-        //应用viewBinder
-        adapter.setViewBinder(viewBinder);
+            return false;
+        }
+    };
+    //应用viewBinder
+    adapter.setViewBinder(viewBinder);
 ```
 
 应用后的效果如图：   
@@ -163,15 +163,12 @@ Android期中实验完成度说明
 
 <h3 id='3'>3.界面美化 </h3>
 
-#### 3.1.修改字体大小，原本的字体太小，使用不便  
-![]() 
-
-
-#### 3.2.修改了应用的主题，黑色过于压抑，使用更为明亮的色彩搭配  
-![]() 
+#### 3.1.修改字体大小，原本的字体太小，使用不便    
+#### 3.2.修改了应用的主题，黑色过于压抑，使用更为明亮的色彩搭配    
+![](https://github.com/mozhilei/android/blob/master/NotePad-master/screenshot/31.gif)  
 
 #### 3.3.条目的背景颜色经过精心搭配，主页面用淡粉色，搭配白色页面较为美观，搜索页面用蓝色，跳出搜索条目比较醒目  
-![]()    
+![](https://github.com/mozhilei/android/blob/master/NotePad-master/screenshot/32.gif)    
 
 最后修改日期：2018年6月2日
 
