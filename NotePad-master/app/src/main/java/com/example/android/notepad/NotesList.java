@@ -151,7 +151,7 @@ public class NotesList extends ListActivity {
         SimpleCursorAdapter.ViewBinder viewBinder=new SimpleCursorAdapter.ViewBinder() {
             @Override
             public boolean setViewValue(View view, Cursor cursor, int i) {
-
+                view.setBackgroundColor(Color.rgb(255,218,185));
                 if(cursor.getColumnIndex(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE)==i)
                 {
                     TextView textView1=(TextView)view;
